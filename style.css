@@ -1,0 +1,53 @@
+#wrapper {
+  margin: 0 auto;
+  width: 980px; }
+
+header {
+  display: flex;
+  height: 150px;
+  background: #67cec0;
+  justify-content: center;
+  align-items: center; }
+  header #add-task__input {
+    width: 500px;
+    height: 45px;
+    font-family: Verdana;
+    font-size: 1.7em;
+    border: none;
+    color: #7f7e7e;
+    border-radius: 10px; }
+  header #add-task__button {
+    color: #fff;
+    font-family: 'Verdana';
+    font-size: 2.2em;
+    margin-left: 5px; }
+
+main {
+  display: flex;
+  width: 100%; }
+  main #todolist li {
+    cursor: pointer;
+    width: 970px;
+    height: 30px;
+    padding-top: 10px;
+    font: 20px Verdana;
+    background: #F2F1F2;
+    padding-left: 10px;
+    border-bottom: 1px solid #67cec0; }
+    main #todolist li input {
+      width: 19px;
+      height: 19px; }
+    main #todolist li span {
+      font-size: 25px;
+      float: right;
+      margin-right: 10px;
+      color: #67cec0; }
+    main #todolist li .deleteButton:hover {
+      color: #000;
+      transition: 1s; }
+  main #todolist li:hover {
+    background-color: #c5efc4; }
+  main #todolist li:active {
+    background: lightblue; }
+
+/*# sourceMappingURL=style.css.map */
