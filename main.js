@@ -4,6 +4,7 @@ function addList() {
     var todolist = document.getElementById('todolist');
     var task = document.getElementById('add-task__input');
     var newLi = document.createElement('li');
+    // newLi.classList.add('notCompleted');
     var checkBoxLi= document.createElement('input');
     checkBoxLi.setAttribute('class', 'input__Checkbox')
     var span = document.createElement('span');
@@ -30,18 +31,24 @@ function testForKeyCode(e) {
 //delete function for X
 var deleteButtons = document.getElementById('todolist').addEventListener('click', deleteTasks);
 function deleteTasks(event) {
-    if (event.target.classList.contains('deleteButton')) {
-        event.target.parentNode.style.display = 'none';
+    if (event.target.classList.contains('deleteButton')){
+        event.target.parentNode.remove();
     }
-    else if(event.target.checked ) {
-        event.target.parentNode.style.textDecoration = "line-through";
-        event.target.parentNode.style.background = 'lightgrey';
-    }
-    else if(!event.target.checked) {
-        event.target.parentNode.style.textDecoration = "none";
-        event.target.parentNode.style.background = '#F2F1F2';
-    }
+    toggleLiAttributes();
 }
 
+function toggleLiAttributes() {
+    event.target.parentNode.classList.toggle('completed',event.target.checked);
+    event.target.parentNode.classList.remove();
 
+}
 
+//delete all completed tasks
+function deleteCompleted() {
+    var parent = document.querySelector('#todolist');
+    var itemList = document.querySelectorAll('.completed');
+
+    for(var i = itemList.length - 1; i >= 0; i--) {
+        parent.removeChild(itemList[i]);
+    }
+}
