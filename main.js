@@ -34,13 +34,17 @@ function deleteTasks(event) {
     if (event.target.classList.contains('deleteButton')){
         event.target.parentNode.remove();
     }
-    toggleLiAttributes();
+    toggleLiAttributes(event);
 }
 
-function toggleLiAttributes() {
-    event.target.parentNode.classList.toggle('completed',event.target.checked);
-    event.target.parentNode.classList.remove();
+function toggleLiAttributes(event) {
+    if(event.target.checked){
 
+        event.target.parentNode.classList.toggle("completed")
+    }
+    else{
+        event.target.parentNode.classList.toggle("completed")
+    }
 }
 
 //delete all completed tasks
@@ -52,3 +56,5 @@ function deleteCompleted() {
         parent.removeChild(itemList[i]);
     }
 }
+
+
