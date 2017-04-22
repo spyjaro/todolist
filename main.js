@@ -39,11 +39,10 @@ function deleteTasks(event) {
 
 function toggleLiAttributes(event) {
     if(event.target.checked){
-
-        event.target.parentNode.classList.toggle("completed")
+        event.target.parentNode.classList.add("completed")
     }
     else{
-        event.target.parentNode.classList.toggle("completed")
+        event.target.parentNode.classList.remove("completed")
     }
 }
 
